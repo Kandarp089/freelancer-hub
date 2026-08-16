@@ -88,11 +88,6 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-[#2A2A2E] pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#8D8A83]">
           <p>© {new Date().getFullYear()} Freelancer Hub Inc. All rights reserved.</p>
-          <div className="flex items-center space-x-1 mt-4 sm:mt-0">
-            <span>Crafted with</span>
-            <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />
-            <span>for human craftsmanship.</span>
-          </div>
         </div>
 
       </div>
