@@ -71,9 +71,9 @@ export default function DashboardOverview() {
             <RefreshCw className={`w-3.5 h-3.5 text-[#F4B860] ${loading ? 'animate-spin' : ''}`} />
             <span>Sync Live Data</span>
           </button>
-          <Link to="/admin/projects?action=new" className="btn-amber px-4 py-2.5 rounded-xl text-xs font-bold shadow-md shadow-[#F4B860]/10 flex items-center space-x-1.5">
+          <Link to="/admin/projects" className="btn-amber px-4 py-2.5 rounded-xl text-xs font-bold shadow-md shadow-[#F4B860]/10 flex items-center space-x-1.5">
             <Plus className="w-4 h-4" />
-            <span>Create Project</span>
+            <span>Manage Projects</span>
           </Link>
         </div>
       </div>
@@ -199,20 +199,20 @@ export default function DashboardOverview() {
           <div className="pt-6 pb-2">
             <div className="h-64 flex items-end justify-between gap-2 sm:gap-4 border-b border-[#29292D] pb-4">
               {revenueMonthlyGraph.map(item => {
-                const heightPercent = Math.round((item.revenue / maxRevenue) * 100);
+                const heightPercent = Math.max(Math.round((item.revenue / maxRevenue) * 100), 12);
                 return (
-                  <div key={item.month} className="flex-1 flex flex-col items-center gap-2 group relative">
+                  <div key={item.month} className="flex-1 flex flex-col items-center justify-end h-full group relative">
                     <div className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-[#111113] border border-[#29292D] text-[10px] text-[#F4F0E8] px-2.5 py-1 rounded shadow whitespace-nowrap z-10 pointer-events-none">
                       ₹{item.revenue.toLocaleString('en-IN')} ({item.projects} projects)
                     </div>
 
-                    <div className="w-full max-w-[42px] bg-[#111113] rounded-t-xl overflow-hidden h-full flex items-end p-1 border border-[#29292D]">
+                    <div className="w-full max-w-[42px] h-[190px] bg-[#111113] rounded-t-xl overflow-hidden flex items-end p-1 border border-[#29292D]">
                       <div 
                         style={{ height: `${heightPercent}%` }}
-                        className="w-full bg-gradient-to-t from-[#E9A84C] to-[#F4B860] rounded-t-lg transition-all duration-500 group-hover:brightness-110 shadow-lg shadow-[#F4B860]/20"
+                        className="w-full bg-gradient-to-t from-[#E9A84C] to-[#F4B860] rounded-t-lg transition-all duration-500 group-hover:brightness-125 shadow-lg shadow-[#F4B860]/40"
                       />
                     </div>
-                    <span className="text-[11px] font-bold text-[#8D8A83] group-hover:text-[#F4B860]">{item.month}</span>
+                    <span className="text-[11px] font-bold text-[#8D8A83] group-hover:text-[#F4B860] mt-2">{item.month}</span>
                   </div>
                 );
               })}

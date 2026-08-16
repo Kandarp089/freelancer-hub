@@ -97,19 +97,19 @@ export default function AnalyticsGrowth() {
         <div className="pt-6 pb-2">
           <div className="h-64 flex items-end justify-between gap-3 border-b border-[#29292D] pb-4">
             {revenueGraph.map(item => {
-              const heightPercent = Math.round((item.revenue / maxRevenue) * 100);
+              const heightPercent = Math.max(Math.round((item.revenue / maxRevenue) * 100), 12);
               return (
-                <div key={item.month} className="flex-1 flex flex-col items-center gap-2 group relative">
+                <div key={item.month} className="flex-1 flex flex-col items-center justify-end h-full group relative">
                   <div className="absolute -top-10 opacity-0 group-hover:opacity-100 transition-opacity bg-[#111113] border border-[#29292D] text-[10px] text-[#F4F0E8] px-2.5 py-1 rounded shadow whitespace-nowrap z-10 pointer-events-none">
                     ₹{item.revenue.toLocaleString('en-IN')}
                   </div>
-                  <div className="w-full max-w-[48px] bg-[#111113] rounded-t-xl overflow-hidden h-full flex items-end p-1 border border-[#29292D]">
+                  <div className="w-full max-w-[48px] h-[190px] bg-[#111113] rounded-t-xl overflow-hidden flex items-end p-1 border border-[#29292D]">
                     <div 
                       style={{ height: `${heightPercent}%` }}
-                      className="w-full bg-gradient-to-t from-[#E9A84C] to-[#F4B860] rounded-t-lg transition-all duration-500 group-hover:brightness-110 shadow-lg shadow-[#F4B860]/20"
+                      className="w-full bg-gradient-to-t from-[#E9A84C] to-[#F4B860] rounded-t-lg transition-all duration-500 group-hover:brightness-125 shadow-lg shadow-[#F4B860]/40"
                     />
                   </div>
-                  <span className="text-[11px] font-bold text-[#8D8A83] group-hover:text-[#F4B860]">{item.month}</span>
+                  <span className="text-[11px] font-bold text-[#8D8A83] group-hover:text-[#F4B860] mt-2">{item.month}</span>
                 </div>
               );
             })}
@@ -130,16 +130,19 @@ export default function AnalyticsGrowth() {
           <div className="pt-4">
             <div className="h-56 flex items-end justify-between gap-3 border-b border-[#29292D] pb-4">
               {revenueGraph.map(item => {
-                const fHeight = Math.round((item.freelancers / maxUserGrowth) * 100);
-                const cHeight = Math.round((item.clients / maxUserGrowth) * 100);
+                const fHeight = Math.max(Math.round((item.freelancers / maxUserGrowth) * 100), 10);
+                const cHeight = Math.max(Math.round((item.clients / maxUserGrowth) * 100), 10);
                 return (
-                  <div key={item.month} className="flex-1 flex items-end justify-center gap-1.5 h-full">
-                    <div className="w-full max-w-[16px] bg-[#111113] rounded-t overflow-hidden h-full flex items-end border border-[#29292D]">
-                      <div style={{ height: `${fHeight}%` }} className="w-full bg-cyan-400 rounded-t" />
+                  <div key={item.month} className="flex-1 flex flex-col items-center justify-end h-full">
+                    <div className="w-full max-w-[40px] h-[160px] flex items-end justify-center gap-1.5">
+                      <div className="w-full bg-[#111113] rounded-t overflow-hidden h-full flex items-end border border-[#29292D]">
+                        <div style={{ height: `${fHeight}%` }} className="w-full bg-cyan-400 rounded-t transition-all duration-500" />
+                      </div>
+                      <div className="w-full bg-[#111113] rounded-t overflow-hidden h-full flex items-end border border-[#29292D]">
+                        <div style={{ height: `${cHeight}%` }} className="w-full bg-indigo-400 rounded-t transition-all duration-500" />
+                      </div>
                     </div>
-                    <div className="w-full max-w-[16px] bg-[#111113] rounded-t overflow-hidden h-full flex items-end border border-[#29292D]">
-                      <div style={{ height: `${cHeight}%` }} className="w-full bg-indigo-400 rounded-t" />
-                    </div>
+                    <span className="text-[11px] font-bold text-[#8D8A83] mt-2">{item.month}</span>
                   </div>
                 );
               })}
