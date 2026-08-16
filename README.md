@@ -1,4 +1,4 @@
-# Freelancer Hub — Modern Production-Ready Freelancer Marketplace
+# Freelancer Hub — Modern Production-Ready Freelancer Marketplace & Super Admin Control Center
 
 ![Obsidian Atelier Theme](https://img.shields.io/badge/Design_System-Obsidian_Atelier-F4B860?style=for-the-badge)
 ![Django 5](https://img.shields.io/badge/Backend-Django_5_|_DRF_|_Channels-092E20?style=for-the-badge&logo=django)
@@ -7,60 +7,59 @@
 ![WebSockets](https://img.shields.io/badge/Realtime-Django_Channels_|_Redis-DC382D?style=for-the-badge&logo=redis)
 ![Currency](https://img.shields.io/badge/Currency-Indian_Rupees_(%E2%82%B9)-FF9933?style=for-the-badge)
 
-**Freelancer Hub** is a modern, high-performance two-sided freelancer marketplace. Built with a robust **Django 5 + REST Framework + Django Channels** backend and a client-side **React 18 + Vite + Tailwind CSS** frontend, the application features an editorial **"Obsidian Atelier"** dark design system, live WebSockets messaging, server-verified Razorpay payments, dynamic category hierarchies, and role-specific portals.
+**Freelancer Hub** is a modern, high-performance two-sided freelancer marketplace and enterprise **Super Admin Control Center**. Built with a robust **Django 5 + REST Framework + Django Channels** backend and a client-side **React 18 + Vite + Tailwind CSS** frontend, the application features an editorial **"Obsidian Atelier"** dark design system, live WebSockets messaging, server-verified Razorpay payments, dynamic category hierarchies, identity verification queues, immutable financial reconciliation, and role-specific portals.
 
 ---
 
-## 🌐 Live Production Demo
+## 🌐 Live Production Demos
 
-- **Vercel Live Application**: [https://frontend-five-black-87.vercel.app](https://frontend-five-black-87.vercel.app)
-- **Django REST API**: `https://loud-windows-invite.loca.lt/api`
-- **Django Admin Panel**: `http://127.0.0.1:8000/admin/`
+- **Public Marketplace Live**: [https://frontend-five-black-87.vercel.app](https://frontend-five-black-87.vercel.app)
+- **Super Admin Control Center**: [https://frontend-five-black-87.vercel.app/admin/login](https://frontend-five-black-87.vercel.app/admin/login)
+- **GitHub Repository**: [https://github.com/Kandarp089/freelancer-hub](https://github.com/Kandarp089/freelancer-hub)
 
 ---
 
 ## 🔑 Fast 1-Click Demo Credentials
 
-| Role | Username / Email | Password | Direct Portal |
+| Role | Email | Password | Direct Portal Link |
 | :--- | :--- | :--- | :--- |
-| **Client** | `client@freelancerhub.com` *(or `democlient`)* | `client123` | [Client Portal](https://frontend-five-black-87.vercel.app/login) |
-| **Freelancer** | `freelancer@freelancerhub.com` *(or `demofreelancer`)* | `freelancer123` | [Freelancer Portal](https://frontend-five-black-87.vercel.app/login) |
-| **Admin** | `admin@freelancerhub.com` *(or `admin`)* | `admin123` | [Admin Portal](https://frontend-five-black-87.vercel.app/login) |
+| **Super Admin** | `admin@freelancerhub.com` | `admin123` | [Super Admin Portal](https://frontend-five-black-87.vercel.app/admin/login) |
+| **Client** | `client@freelancerhub.com` | `client123` | [Client Portal](https://frontend-five-black-87.vercel.app/login) |
+| **Freelancer** | `freelancer@freelancerhub.com` | `freelancer123` | [Freelancer Portal](https://frontend-five-black-87.vercel.app/login) |
 
 ---
 
 ## 🌟 Key Features & Capabilities
 
-### 1. Clients
-- **Account & Profile Setup**: Register as a client, configure company credentials and location.
-- **Project Marketplace**: Post projects with min/max budget in Indian Rupees (`₹`), fixed or hourly rates, deadline, required skills, and image cover attachments.
-- **Proposal Evaluation**: View applicant cover letters, bids, and delivery timelines. Shortlist candidates or accept bids to automatically assign the contract.
-- **Real-Time Communication**: Instant WebSocket messaging with applicants and hired talent.
-- **Razorpay Payments**: Secure payment workflow featuring server-side HMAC signature verification before marking orders as completed.
+### 1. Super Admin Control Center (`/admin/dashboard`)
+- **Matrix-Inspired SaaS Visual Analytics**: 10 Quick Statistic Cards (Total Users, Freelancers, Clients, Active Projects, Completed Work, Revenue, Escrow Volume, Submitted Bids, Pending Verifications, Reports).
+- **Multi-Period Financial Graphs**: Interactive monthly gross billing throughput (Jan–Aug 2026), conversion rate analytics, and category demand distribution bars.
+- **User Accounts Governance (`/admin/users`)**: Manage accounts, search by username/email, assign roles, toggle verification badges, and execute bulk suspend/reactivate actions.
+- **Talent Verification Queue (`/admin/freelancers`)**: Review identity documentation, verify freelancer credentials, and approve/revoke Pro badges.
+- **Contract & Project Moderation (`/admin/projects`)**: Filter projects by budget and status (`OPEN`, `IN_PROGRESS`, `COMPLETED`), approve postings, toggle featured badges, and soft-delete contracts.
+- **Taxonomy Management (`/admin/categories`, `/admin/skills`)**: Full CRUD for 15 top-level categories, subcategories hierarchy, and skills tag directory.
+- **Immutable Financials (`/admin/payments`, `/admin/transactions`)**: Audit Razorpay transaction logs, configure server-side platform commission percentage (default 10%), and export financial CSV reports.
+- **Security Audit Logs (`/admin/audit-logs`, `/admin/system`)**: Immutable Django `AuditLog` table capturing every administrative mutation, IP address, timestamp, and reason, paired with a real-time infrastructure latency monitor.
 
-### 2. Freelancers
-- **Professional Profiles**: Set hourly rates (`₹650 – ₹3,500/hr`), bio, experience years, primary category, and availability.
-- **Interactive Portfolios**: Showcase projects with lightbox previews, technology tags, and live demo links.
-- **Service Listings**: Offer fixed-price pre-packaged services in INR.
-- **Proposal Submission**: Browse open project opportunities across 15 categories, filter by subcategories, and submit proposals with pre-filled budget inputs.
-- **Reviews & Reputation**: Earn verified 1–5 star reviews and build an average star rating.
+### 2. Clients
+- **Project Posting**: Create fixed or hourly projects in INR (`₹`), define milestones, deadline, required skills, and image cover attachments.
+- **Proposal Evaluation**: View applicant cover letters, bids, and delivery timelines. Shortlist candidates or accept bids with 1-click contract assignment.
+- **Razorpay Payments**: Secure payment checkout with server-side HMAC-SHA256 signature verification.
 
-### 3. Administration
-- **User & Content Moderation**: View all platform users, monitor filed reports, and suspend/reactivate accounts.
-- **Dynamic Category Manager**: Manage 15 top-level categories and 50+ subcategories without touching code.
-- **Platform Analytics**: Monitor user growth, total spending, and active contract counts.
+### 3. Freelancers
+- **Talent Profiles**: Set hourly rates (`₹650 – ₹3,500/hr`), bio, experience years, location, and verified badges.
+- **Interactive Portfolios & Service Packages**: Showcase past contracts and fixed-price service packages.
+- **Proposal Bidding**: Submit bids across 15 categories with custom delivery estimates.
 
 ---
 
 ## 🎨 Visual Identity: "Obsidian Atelier"
 
-The application uses a bespoke dark palette designed for modern marketplaces:
-- **Backgrounds**: Deep Obsidian (`#0B0B0D`, `#111113`)
+- **Canvas Background**: Deep Obsidian (`#0B0B0D`, `#111113`)
 - **Card Surfaces**: Elevated Graphite (`#171719`, `#1D1D20`)
 - **Primary Accent**: Champagne Amber (`#F4B860`, `#E9A84C`)
 - **Text & Contrast**: Soft Ivory (`#F4F0E8`) and Muted Slate (`#8D8A83`)
 - **Typography**: `Plus Jakarta Sans` display headings + `Inter` body text
-- **Animations**: Framer Motion scroll reveals and smooth card hover elevations.
 
 ---
 
@@ -69,7 +68,7 @@ The application uses a bespoke dark palette designed for modern marketplaces:
 ```
                                ┌──────────────────────────────────────────┐
                                │           React SPA (Vite + Tailwind)    │
-                               │    Obsidian Atelier UI / Framer Motion   │
+                               │    Obsidian Admin / Framer Motion        │
                                └────────────────────┬─────────────────────┘
                                                     │
                                         HTTP REST   │   WebSockets (WSS)
@@ -78,6 +77,7 @@ The application uses a bespoke dark palette designed for modern marketplaces:
                                ┌──────────────────────────────────────────┐
                                │         Django REST Framework API        │
                                │        Django Channels ASGI Server       │
+                               │        Admin Governance & AuditLog       │
                                └────────┬───────────┬────────────┬────────┘
                                         │           │            │
                                         ▼           ▼            ▼
@@ -97,83 +97,67 @@ The application uses a bespoke dark palette designed for modern marketplaces:
 - Node.js v18+ & npm
 - Git
 
-### 1. Environment Setup
+### 1. Backend Setup
 
 ```powershell
-# Clone the repository
-git clone https://github.com/kandarp089/freelancer-hub.git
+# Clone repository
+git clone https://github.com/Kandarp089/freelancer-hub.git
 Set-Location freelancer-hub
 
-# Create Python Virtual Environment inside backend
+# Create & activate virtual environment
 python -m venv backend\venv
-
-# Activate Virtual Environment
 .\backend\venv\Scripts\Activate.ps1
 
-# Install Python requirements
+# Install requirements
 pip install -r backend\requirements.txt
-```
 
-### 2. Database Setup & Migration
-
-```powershell
-# Generate Django migrations
-python backend\manage.py makemigrations accounts categories profiles projects proposals messaging notifications reviews payments favorites reports
-
-# Apply migrations
+# Run migrations
+python backend\manage.py makemigrations accounts categories profiles projects proposals messaging notifications reviews payments favorites reports admin_panel
 python backend\manage.py migrate
 
-# Seed 15 categories with 120+ projects, image attachments & verified freelancers
+# Seed database with dummy data
 python backend\manage.py seed_data
-```
 
-### 3. Run Backend Server
-
-```powershell
-# Run ASGI/WSGI Development Server
+# Start backend server
 python backend\manage.py runserver 8000
 ```
-*API Base URL*: `http://127.0.0.1:8000/api/`
+*API Endpoint*: `http://127.0.0.1:8000/api/`
 
 ---
 
-### 4. Frontend Setup
+### 2. Frontend Setup
 
 Open a second PowerShell window:
 
 ```powershell
-# Navigate to frontend folder
 Set-Location frontend
-
-# Install Node dependencies
 cmd /c "npm install"
-
-# Start Vite Development Server
 cmd /c "npm run dev"
 ```
-*Frontend App URL*: `http://localhost:5173`
+*Frontend Dev Server*: `http://localhost:5173`
 
 ---
 
-## 🧪 Running Automated Tests
+## 🧪 Running Tests & Build Verification
 
 ```powershell
-# Run backend Django unit test suite
-.\backend\venv\Scripts\python.exe backend\manage.py test apps.common
+# Django backend unit tests
+.\backend\venv\Scripts\python.exe backend\manage.py test apps.admin_panel apps.common
 
-# Test frontend production build bundle
+# Vite production bundle build
 cmd /c "npm run build"
 ```
 
 ---
 
-## 📁 Repository Directory Structure
+## 📁 Repository Structure
 
 ```
-Dark Free Lancing/
+freelancer-hub/
 ├── backend/
 │   ├── apps/
 │   │   ├── accounts/         # User auth, custom model, JWT tokens, dual login
+│   │   ├── admin_panel/      # Super Admin REST API, AuditLog, Dispute, MarketplaceSetting
 │   │   ├── categories/       # Category & SubCategory models & views
 │   │   ├── profiles/         # FreelancerProfile, ClientProfile, Portfolio, Service
 │   │   ├── projects/         # Project postings, image attachments, cover banners
@@ -190,37 +174,23 @@ Dark Free Lancing/
 │   └── manage.py
 ├── frontend/
 │   ├── src/
+│   │   ├── admin/            # Super Admin Layout, Sidebar, Topbar, AdminLogin
+│   │   │   └── pages/        # DashboardOverview, UsersManager, FreelancersManager,
+│   │   │                     # ProjectsManager, CategoriesSkillsManager, FinancialsManager,
+│   │   │                     # AuditLogsSystem
 │   │   ├── components/       # Navbar, Footer, Cards, RatingStars
 │   │   ├── context/          # AuthContext provider
 │   │   ├── pages/            # Home, CategoryList, CategoryDetail, FreelancerList,
 │   │   │                     # FreelancerDetail, ProjectList, ProjectDetail, PostProject,
 │   │   │                     # DashboardClient, DashboardFreelancer, DashboardAdmin, Chat, etc.
 │   │   ├── services/         # Axios API interceptors & fallback mock dataset
-│   │   ├── App.jsx           # Client-side router & ScrollToTop listener
-│   │   ├── index.css         # Obsidian Atelier CSS theme rules
-│   │   └── main.jsx
+│   │   └── App.jsx           # Client-side router
 │   ├── package.json
 │   ├── vercel.json           # Vercel proxy rewrite config
 │   └── netlify.toml          # Netlify SPA redirect config
-├── .env.example
 ├── .gitignore
 ├── render.yaml
 └── README.md
-```
-
----
-
-## 💳 Payment Gateway Integration (Razorpay)
-
-Freelancer Hub integrates **Razorpay** for Indian & International payment processing:
-1. When a client initiates payment, the server calls `create_razorpay_order()` to generate a secure Razorpay Order ID.
-2. After the client completes checkout, signature verification is executed strictly on the Django backend using HMAC-SHA256 digest comparison.
-3. Upon signature verification success, the payment record status updates to `SUCCESS` and the project state transitions to `COMPLETED`.
-
-Set your Razorpay credentials in `.env`:
-```env
-RAZORPAY_KEY_ID=rzp_test_your_key_id
-RAZORPAY_KEY_SECRET=your_secret_key
 ```
 
 ---
