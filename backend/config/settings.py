@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.favorites',
     'apps.reports',
     'apps.common',
+    'apps.admin_panel',
 ]
 
 MIDDLEWARE = [

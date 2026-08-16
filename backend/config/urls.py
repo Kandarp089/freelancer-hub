@@ -16,6 +16,7 @@ urlpatterns = [
     path('api/payments/', include('apps.payments.urls')),
     path('api/favorites/', include('apps.favorites.urls')),
     path('api/reports/', include('apps.reports.urls')),
+    path('api/admin/', include('apps.admin_panel.urls')),
 ]
 
 if settings.DEBUG:
