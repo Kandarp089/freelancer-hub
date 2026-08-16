@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { MOCK_CATEGORIES, MOCK_FREELANCERS, MOCK_PROJECTS } from './mockData';
+import { MOCK_CATEGORIES, MOCK_FREELANCERS, MOCK_PROJECTS, MOCK_PROPOSALS } from './mockData';
 
 const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 const activeTunnel = 'https://stale-dots-marry.loca.lt/api';
@@ -107,6 +107,9 @@ API.interceptors.response.use(
           return { data: found };
         }
         return { data: { count: MOCK_PROJECTS.length, results: MOCK_PROJECTS } };
+      }
+      if (url.includes('/proposals')) {
+        return { data: { count: MOCK_PROPOSALS.length, results: MOCK_PROPOSALS } };
       }
       if (url.includes('/reviews')) {
         return { data: { count: 0, results: [] } };
