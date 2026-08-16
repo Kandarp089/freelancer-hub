@@ -27,10 +27,15 @@ import Register from './pages/Register';
 import AdminLogin from './admin/AdminLogin';
 import AdminLayout from './admin/AdminLayout';
 import DashboardOverview from './admin/pages/DashboardOverview';
+import AnalyticsGrowth from './admin/pages/AnalyticsGrowth';
 import UsersManager from './admin/pages/UsersManager';
+import ClientsManager from './admin/pages/ClientsManager';
 import FreelancersManager from './admin/pages/FreelancersManager';
 import ProjectsManager from './admin/pages/ProjectsManager';
+import ProposalsManager from './admin/pages/ProposalsManager';
 import CategoriesSkillsManager from './admin/pages/CategoriesSkillsManager';
+import ServicesPortfolioManager from './admin/pages/ServicesPortfolioManager';
+import ReviewsModeration from './admin/pages/ReviewsModeration';
 import FinancialsManager from './admin/pages/FinancialsManager';
 import AuditLogsSystem from './admin/pages/AuditLogsSystem';
 
@@ -73,22 +78,22 @@ export default function App() {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Navigate to="/admin/dashboard" replace />} />
             <Route path="dashboard" element={<DashboardOverview />} />
-            <Route path="analytics" element={<DashboardOverview />} />
+            <Route path="analytics" element={<AnalyticsGrowth />} />
             
             <Route path="users" element={<UsersManager />} />
-            <Route path="clients" element={<UsersManager />} />
+            <Route path="clients" element={<ClientsManager />} />
             
             <Route path="freelancers" element={<FreelancersManager />} />
             <Route path="verification" element={<FreelancersManager />} />
             
             <Route path="projects" element={<ProjectsManager />} />
-            <Route path="proposals" element={<ProjectsManager />} />
-            <Route path="reviews" element={<ProjectsManager />} />
+            <Route path="proposals" element={<ProposalsManager />} />
+            <Route path="reviews" element={<ReviewsModeration />} />
             
             <Route path="categories" element={<CategoriesSkillsManager />} />
             <Route path="skills" element={<CategoriesSkillsManager />} />
-            <Route path="services" element={<CategoriesSkillsManager />} />
-            <Route path="portfolio" element={<CategoriesSkillsManager />} />
+            <Route path="services" element={<ServicesPortfolioManager />} />
+            <Route path="portfolio" element={<ServicesPortfolioManager />} />
             
             <Route path="payments" element={<FinancialsManager />} />
             <Route path="transactions" element={<FinancialsManager />} />
