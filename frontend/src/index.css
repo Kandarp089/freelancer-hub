@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-obsidian: #0B0B0D;
+    --bg-obsidian-alt: #111113;
+    --surface-dark: #171719;
+    --surface-elevated: #1D1D20;
+    --surface-border: #2A2A2E;
+    --accent-amber: #F4B860;
+    --accent-amber-hover: #E9A84C;
+    --text-ivory: #F4F0E8;
+    --text-muted: #8D8A83;
+  }
+
+  body {
+    background-color: var(--bg-obsidian);
+    color: var(--text-ivory);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A2E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F4B860;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(23, 23, 25, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-nav {
+  background: rgba(11, 11, 13, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.obsidian-card {
+  background: #171719;
+  border: 1px solid #2A2A2E;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.obsidian-card:hover {
+  border-color: rgba(244, 184, 96, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8), 0 0 20px -5px rgba(244, 184, 96, 0.15);
+}
+
+.btn-amber {
+  background-color: #F4B860;
+  color: #0B0B0D;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-amber:hover {
+  background-color: #E9A84C;
+  box-shadow: 0 0 16px rgba(244, 184, 96, 0.35);
+  transform: translateY(-1px);
+}
